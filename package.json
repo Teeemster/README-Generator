@@ -1,0 +1,16 @@
+{
+  "name": "challenge7",
+  "version": "1.0.0",
+  "description": "This application is intended to enable the user to assess current weather status and five-day forecast by city.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test", 
+    "start": "node app.js"
+  }, 
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
