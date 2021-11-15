@@ -1,5 +1,5 @@
 const fs = require('fs');
-const inquirer = require('inquirer')
+const inquirer = require('inquirer');
 
 inquirer
     //Questions Are Passed In Here
@@ -55,17 +55,18 @@ inquirer
     .then((answers) => {
         console.log(answers);
         console.log(answers.license_name);
-        console.log(badgeIcon)
 
         let badgeIcon = answers.license_name;
 
-        if (badgeIcon = 'GPL v3') {
+        if (badgeIcon === 'GPL v3') {
             badgeIcon = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
-        } else if (badgeIcon = 'GPL v2') {
+        } else if (badgeIcon === 'GPL v2') {
             badgeIcon = '[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)'
         } else {
             badgeIcon = '[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)'
         }
+
+        console.log(badgeIcon)
 
         fs.writeFileSync('README.md',
 
@@ -83,7 +84,7 @@ ${badgeIcon}
 
 * [Usage](#usage)
 
-* [Credits](#credits)
+* [Contributors](#contributors)
 
 * [License](#license)
 
@@ -97,10 +98,10 @@ ${badgeIcon}
 * This repository can be opened as an HTML within Github at the website: https://${answers.github_name}.github.io/${answers.project_name}/
 
 ## Testing
-* To install dependencies, use: ${dependency_name}
+* To install dependencies, use: ${answers.dependency_name}
 * To run tests, use: ${answers.test_name}
 
-##Contributors
+## Contributors
 * ${answers.real_name}
 * University of Arizonia
 
@@ -112,9 +113,8 @@ ${badgeIcon}
 
 ## Badges
 
-* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/JSS-50%25-green" alt="JavaScript 50% Badge"></a>
-* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/HTML-25%25-green" alt="HTML 25% Badge"></a>
-* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/CSS-25%25-green" alt="CSS 25% Badge"></a>`
+* <a href="https://github.com/badges/shields"><img src="https://img.shields.io/badge/JSS-100%25-green" alt="JavaScript 100% Badge"></a>
+`
 
             //END of README
 
@@ -124,7 +124,8 @@ ${badgeIcon}
             }
         );
     })
-    .catch ((error) => {
+    .catch((error) => {
+        console.log(error);
     if (error.isTtyError) {
         // Prompt couldn't be rendered in the current environment
     } else {
