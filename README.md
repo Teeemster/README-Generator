@@ -22,6 +22,7 @@
 ## Usage
 * The application can be invoked using node app.js. From here, the user will be prompted with a series of questions to fill out the README.md file.
 * This repository can be opened as an HTML within Github at the website: https://github.com/Teeemster/README-Generator
+* A video of the utility can be viewed here: https://watch.screencastify.com/v/Ssm697UwOoygOKONEzZB
 
 ![Sample of README](SampleREADME.PNG)
 
